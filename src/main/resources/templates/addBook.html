@@ -6,7 +6,7 @@
 		<div th:replace="common/header :: navbar" />
 		<div class="container">
 			<div class="row">
-				<form class="form-horizontal" th:action="@{/book/add}" method="post" enctype="multipart/formdata">
+				<form class="form-horizontal" th:action="@{/book/add}" method="post" enctype="multipart/form-data">
 				<fieldset>
 					<legend class="center-block">
 						New Book Information
@@ -43,10 +43,10 @@
 					</div>
 					
 					<!-- publication date -->
-					<div class="form-group">
+					<div class="form-group" >
 						<label class="col-md-2 control-label" for ="publicationDate">Publication Date</label>
-						<div class="col-md-8">
-							<input type="date" class="form-control" id="publicationDate" name="publicationDate" th:value="${book.publicationDate}" placeholder="Publication Date" />
+						<div class="col-md-8" id="date">
+							<input type="text" class="form-control" id="publicationDate" name="publicationDate" th:value="${book.publicationDate}" placeholder="mm/dd/yyyy" ></input>
 							<span class="help-block">Publication Date of the book</span>
 						</div>
 					</div>
@@ -208,5 +208,10 @@
 			</div>
 		</div>
 		  <div th:replace="common/header :: body-bottom-scripts" />
+		  <script>
+			$(function(){
+				$('#date input').datepicker();
+			});
+		  </script>
 	</body>
 </html>
