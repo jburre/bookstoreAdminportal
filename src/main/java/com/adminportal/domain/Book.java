@@ -21,6 +21,7 @@ public class Book {
 	private String publicationDate;
 	private String language;
 	private String category;
+	private String format;
 	private int numberOfPages;
 	private int isbn;
 	private double shippingWeight;
@@ -161,5 +162,13 @@ public class Book {
 
 	public void setBookImage(MultipartFile bookImage) {
 		this.bookImage = bookImage;
+	}
+
+	public String getFormat() {
+		return format;
+	}
+
+	public void setFormat(String format) {
+		this.format = format;
 	}
 }
