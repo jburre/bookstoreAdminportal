@@ -31,7 +31,7 @@
 						<td th:text="${book.listPrice}"></td>
 						<td th:text="${book.ourPrice}"></td>
 						<td th:text="${book.active}"></td>
-						<td th:text="${picturePath}"></td>
+						<td th:text="'http://localhost:8081/adminportal/'+@{/image/book/}+${book.id}+'.png'"></td>
 						<td>delete</td>
 					</tr>
 				</tbody>

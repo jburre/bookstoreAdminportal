@@ -32,18 +32,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			"/css/**",
 			"/js/**",
 			"/image/**",
-			"/newUser",
 			"/forgetPassword",
 			"/login"
 	};
 	
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-			.authorizeRequests().
+			.authorizeRequests()
 		/*	antMatchers("/**").*/
-			antMatchers(PUBLIC_MATCHERS).
-			permitAll().anyRequest().authenticated();
+			.antMatchers(PUBLIC_MATCHERS).permitAll()
+			.antMatchers("/**").access("hasRole('ROLE_ADMIN')")
+			.anyRequest().authenticated();
 		
 		http
 			.csrf().disable().cors().disable()
