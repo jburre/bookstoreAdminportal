@@ -171,4 +171,13 @@ public class Book {
 	public void setFormat(String format) {
 		this.format = format;
 	}
+
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", publisher=" + publisher
+				+ ", publicationDate=" + publicationDate + ", language=" + language + ", category=" + category
+				+ ", format=" + format + ", numberOfPages=" + numberOfPages + ", isbn=" + isbn + ", shippingWeight="
+				+ shippingWeight + ", listPrice=" + listPrice + ", ourPrice=" + ourPrice + ", active=" + active
+				+ ", description=" + description + ", inStockNumber=" + inStockNumber + "]";
+	}
 }
