@@ -16,7 +16,6 @@
 						<th>List Price</th>
 						<th>Our Price</th>
 						<th>Active</th>
-						<th>Picture Path</th>
 						<th>Operation</th>
 					</tr>
 				</thead>
@@ -31,13 +30,24 @@
 						<td th:text="${book.listPrice}"></td>
 						<td th:text="${book.ourPrice}"></td>
 						<td th:text="${book.active}"></td>
-						<td th:text="'http://localhost:8081/adminportal/'+@{/image/book/}+${book.id}+'.png'"></td>
+						
 						<td>delete</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
-	<div th:replace="common/header :: body-bottom-scripts" />
+	<div th:replace="common/header :: body-bottom-scripts">
+	</div>
+	<script>
+		$(document).ready(function(){
+			
+			$("#bookListTable").DataTable({
+				"lengthMenu": [[5,10,15,20,-1],[5,10,15,20,"All"]],
+				"ordering": false,
+				stateSave: true
+			});
+		});
+	</script>
 </body>
 </html>
