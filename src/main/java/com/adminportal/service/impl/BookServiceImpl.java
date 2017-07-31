@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.adminportal.domain.Book;
+import com.adminportal.repository.BookRepository;
 import com.adminportal.service.BookService;
 
 @Service

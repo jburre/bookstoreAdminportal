@@ -1,4 +1,4 @@
-package com.adminportal.service.impl;
+package com.adminportal.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
